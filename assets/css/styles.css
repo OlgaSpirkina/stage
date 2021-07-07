@@ -2,3 +2,20 @@ a{
   text-decoration: none;
    color: #FF813F;
 }
+#banner{
+  background-image: url("../img/coding.jpg");
+}
+#programming{
+  background-image: url("../img/programming.jpg");
+}
+#programming,
+#banner{
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer{
+  height: 5rem;
+}

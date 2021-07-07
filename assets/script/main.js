@@ -11,14 +11,14 @@ function Entreprise(name, post, technologies=[], applicationDate, website, img){
     console.log(today);
     var differenceInDays =  Math.floor(( Date.parse(today) - Date.parse(`${this.applicationDate}`) ) / 86400000);
 // la fonction tertièrre
-    return differenceInDays == 0 ? 'postulé aujourd\'hui' : differenceInDays + ' jour(s)';
+    return differenceInDays == 0 ? 'postulé aujourd\'hui' : 'postulé il y a ' + differenceInDays + ' jours';
   }
   this.displayCard = function(){
   const card =
     `<div class="card m-2" style="width: 18rem;">` +
     `  <img src="${this.img}" class="card-img-top" alt="logo de la sociéte ${this.nom}"> `+
       '<div class="card-body">' +
-        `<h5 class="card-title mb-5">${this.name}</h5>` +
+        `<h5 class="card-title mb-5">${this.post}</h5>` +
         `<p class="card-text">${this.waitingForTheAnswer()}</p>` +
         `<a href="${this.website}" target="_blank" class="btn btn-primary">Consulter</a>` +
       '</div>'
@@ -27,6 +27,7 @@ function Entreprise(name, post, technologies=[], applicationDate, website, img){
   return result;
   }
 }
+
 
 let galadrim = new Entreprise(
 'Galadrim',
