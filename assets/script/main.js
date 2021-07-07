@@ -91,13 +91,26 @@ let dataiku = new Entreprise(
 'Java', 'JavaScript',
 'Python', 'Ruby'
 ],
-'2021-07-05',
+'2021-07-06',
 'https://www.welcometothejungle.com/fr/companies/dataiku/jobs/software-engineer-intern-folder-to-dataset-recipe-in-dss_paris',
 'assets/img/dataiku.png'
 );
+let criteo = new Entreprise(
+'Criteo',
+'Backend or Fullstack',
+['TypeScript/JavaScript', 'C# (.Net Frmwk, .Net Core)',
+'Mesos', 'Frontend: JSON',
+'POO', 'Data quality in the RichTimeline'
+],
+'2021-07-06',
+'https://app.50intech.com/job/criteo-software-engineer-internship-6-months-backend-or-fullstack-paris-france',
+'assets/img/criteo.png'
+);
+
 galadrim.displayCard();
 scaleway.displayCard();
 micropole.displayCard();
 sap.displayCard();
 numberly.displayCard();
 dataiku.displayCard();
+criteo.displayCard();
