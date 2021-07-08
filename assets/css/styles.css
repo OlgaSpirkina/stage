@@ -1,13 +1,18 @@
-a{
-  text-decoration: none;
-   color: #FF813F;
+/* création des variables des police et des couleurs */
+:root{
+  --mainpink: #fb9dab;
+  --mainorange: #FF813F;
+  --fonttitle: "Sacramento", cursive;
+  --fonttext: "Alice", serif;
 }
+/* la section à propos */
 #banner{
   background-image: url("../img/coding.jpg");
 }
 #programming{
   background-image: url("../img/programming.jpg");
 }
+/* l'effet paralax pour deux images */
 #programming,
 #banner{
   min-height: 500px;
@@ -16,6 +21,41 @@ a{
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* la barre de recherche: input et icone de recherche */
+input{
+  height: 3rem;
+  border: 1px solid var(--mainorange);
+  border-radius: 1rem;
+}
+input:focus{
+  outline: none;
+}
+label,
+input,
+.icon{
+  width: 25vw;
+}
+.fa-search{
+position: relative;
+font-size: 1.5rem;
+z-index: 1;
+top: 3.4rem;
+padding-right: .5rem;
+color: var(--mainorange);
+}
+/* le footer */
 footer{
   height: 5rem;
+}
+/* les icones de contacts */
+a{
+  text-decoration: none;
+   color: var(--mainorange);
+}
+@media only screen and (max-width: 768px) {
+  label,
+  input,
+  .icon{
+    width: 100%;
+  }
 }
