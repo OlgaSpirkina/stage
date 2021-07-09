@@ -1,3 +1,7 @@
+/* l'effet de scroll */
+html {
+ scroll-behavior: smooth;
+}
 /* création des variables des police et des couleurs */
 :root{
   --mainpink: #fb9dab;
@@ -20,6 +24,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+/* bannière et le descriptif */
+.about{
+  width: 50vw;
+  background-color: rgba(255, 255, 255, .8);
+  margin: 15rem auto .5rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+}
+.logo{
+  width: 7rem;
+  border-radius: .6rem;
 }
 /* la barre de recherche: input et icone de recherche */
 input{
@@ -52,10 +68,28 @@ a{
   text-decoration: none;
    color: var(--mainorange);
 }
+/* Styliser les cartes */
+.card{
+  border: 1px solid #91a3b0;
+  border-radius: 1rem;
+}
+.card:hover{
+  scale: 1.1;
+}
+.card-img-top{
+  border-radius: 1rem 1rem 0 0;
+}
 @media only screen and (max-width: 768px) {
   label,
   input,
   .icon{
     width: 100%;
+  }
+  /* bannière et le descriptif */
+  .about{
+    width: 90vw;
+    margin: 1rem auto;
+    font-size: 1rem;
+    border-radius: .5rem;
   }
 }

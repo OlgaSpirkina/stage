@@ -34,13 +34,13 @@ let companiesList = [
   },
   {
     name: 'SAP',
-    post: 'Dveloppeur web/mobile',
+    post: 'Dveloppeur JavaScript d\'Application Web pour Intelligent RPA',
     technologies:  ['Cloud Studio', 'Robotic Process Automation (RPA)', 'testes unitaires JavaScript',
     'GIT/GITHUB', 'gestion du DOM',
     'Design Patterns type FLUX, REACT'
     ],
     applicationDate: '2021-07-05',
-    website:   'https://jobs.sap.com/job/Levallois-Perret-Stagiaire-D%C3%A9veloppeur-JavaScript-d&apos;Application-Web-pour-Intelligent-RPA-FH-92300/683926101/',
+    website: 'https://jobs.sap.com/job/Levallois-Perret-Stagiaire-D%C3%A9veloppeur-JavaScript-d&apos;Application-Web-pour-Intelligent-RPA-FH-92300/683926101/',
     img:   'assets/img/sap.png'
   },
   {
@@ -100,6 +100,17 @@ let companiesList = [
     applicationDate: '2021-07-07',
     website: 'https://sparted.welcomekit.co/jobs/developer-fullstack-web-mobile-cdi_paris_SPART_mzwMoQ7',
     img: 'assets/img/sparted.png'
+  },
+  {
+    name: 'LumApps',
+    post: 'Fullstack Engineer Integration',
+    technologies:['React/Redux', 'JavaScript', 'Expérience HTML / CSS / SASS',
+    'Tests', 'Python',
+    'Hébergement Google App Engine & Azure'
+    ],
+    applicationDate: '2021-07-07',
+    website: 'https://www.lumapps.com/company/job-offers/?gh_jid=5242816002',
+    img: 'assets/img/lumapps.png'
   },
 ];
 // la bar de recherche

@@ -16,8 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <section class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Statistiques</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,26 +25,32 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">A propos</a>
+                <a class="nav-link active" aria-current="page" href="#banner">A propos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Entreprises</a>
+                <a class="nav-link" href="#companies">Entreprises</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="#programming">Contacts</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    </section>
     <section id="banner" class="container-fluid">
-      <div class="row d-flex flex-wrap">
-        <div class="col-12">
+      <div class="row">
+        <div class="about col-12">
+          <p class="text-center mt-3">Actuellement en formation de développeuse web chez
+            <a href="https://descodeuses.org/" target="_blank"><img class="logo" src="assets/img/descodeuses.png" alt="logo Descodeuses"/></a>
+          je recherche un stage de 6 mois afin d’accroitre mes compétences et mon expérience professionnelle dans ce domaine.
+          Passionnée par le sport, j’ai décidé de me réorienter dans la tech car le marché est porteur d’opportunités d’emploi et inspirant à mon gout.
+          J’aime développer des idées et les convertir en projet réel. Les qualités développées durant mon passé sportif, telles que l'autonomie, la rigueur, la persévérance, la réactivité sont autant d’atouts qui peuvent être utiles dans le milieu informatique.
+          </p>
+          <p class="text-center">J'aime apprendre, j'apprends vite et j'aime coder.</p>
         </div>
       </div>
     </section>
-    <section class="container-fluid">
+    <section id="companies" class="container-fluid">
       <div class="row">
         <form class="d-flex flex-column justify-content-center my-4">
           <label class="mx-auto text-center my-1" for="searchBar">Recherche par nom de l'ennreprise ou le post:</label>
