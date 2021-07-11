@@ -1,3 +1,4 @@
+// un tableau d'objets
 let companiesList = [
   {
     id: 1,
@@ -139,19 +140,24 @@ input.addEventListener('keyup', (e) => {
       eachCompany.name.toLowerCase().includes(searchString) || eachCompany.post.toLowerCase().includes(searchString)
     );
   });
+  // j'appelle la fonction qui génére les cartes avec la fonction qui filtre comme argument
   displayCharacters(filteredCompanies);
 
 });
+// la fonction qui parcours un tableau et permet d'afficher les elements du tableau dans le html en forme d'une carte bootstrap
 const displayCharacters = (anyArray) => {
   const today = new Date();
   const htmlString = anyArray.map((arrayElement) => {
+    // début de la fonction qui calcule les jours passés du moment de l'application
       var application = new Date(arrayElement.applicationDate);
       var differenceInTime = today.getTime() - application.getTime();
       var differenceInDays = parseInt(differenceInTime / (1000 * 3600 * 24));
       differenceInDays = (
         differenceInDays == 0 ? 'postulé aujourd\'hui' : differenceInDays == 1 ? 'postulé il y a ' + differenceInDays + ' jour' : 'postulé il y a ' + differenceInDays + ' jours'
       );
+// la fin de la fonction calculant les jours passés et récupération de la variable differenceInDays
 
+// la carte qui sera afficher pour chaque element du tableau
     return `
     <div id="item_${arrayElement.name}" class="card m-2" style="width: 18rem;">
      <img src="${arrayElement.img}" class="card-img-top" alt="logo de la sociéte ${arrayElement.name}">
@@ -166,9 +172,11 @@ const displayCharacters = (anyArray) => {
   .join('');
   document.getElementById("displayCards").innerHTML = htmlString;
 }
+// j'appelle la fonction qui va trier / searchBar
 displayCharacters(companiesList);
 
-
+// afficher l'onglet avec plus de détaille consernant chaque offre. L'onglet est composé des divs stylisées
+// elle est appeller au moment de génération des cartes (à la ligne 167)
 function displayPopup(name, post, id, web){
       companiesList.forEach((item) => {
         if(item.name == name){
@@ -193,10 +201,13 @@ function displayPopup(name, post, id, web){
           </div>
           `;
           document.getElementById('displayPopup').innerHTML += answer;
+          // j'appelle la fonction qui affiche toutes les technologies utilisées en tant que la list non-ordonnée
           displayList(`${id}`);
         }
       });
 }
+
+// fermer l'onglet explicatif est appeller à la ligne 186
 function closeIt(){
   document.getElementById('displayPopup').innerHTML = "";
 }
