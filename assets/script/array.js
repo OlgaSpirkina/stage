@@ -34,14 +34,14 @@ let companiesList = [
   },
   {
     name: 'SAP',
-    post: 'Dveloppeur JavaScript d\'Application Web pour Intelligent RPA',
-    technologies:  ['Cloud Studio', 'Robotic Process Automation (RPA)', 'testes unitaires JavaScript',
+    post: "Développeur JavaScript Application Web pour Intelligent RPA",
+    technologies: ['Cloud Studio', 'Robotic Process Automation (RPA)', 'testes unitaires JavaScript',
     'GIT/GITHUB', 'gestion du DOM',
     'Design Patterns type FLUX, REACT'
     ],
     applicationDate: '2021-07-05',
-    website: 'https://jobs.sap.com/job/Levallois-Perret-Stagiaire-D%C3%A9veloppeur-JavaScript-d&apos;Application-Web-pour-Intelligent-RPA-FH-92300/683926101/',
-    img:   'assets/img/sap.png'
+    website:  'https://jobs.sap.com/',
+    img: 'assets/img/sap.png'
   },
   {
     name: 'Numberly',
@@ -51,7 +51,7 @@ let companiesList = [
     'GIT (GitLab)', 'Docker',
     'Kubernetes', 'Cypress'
     ],
-    applicationDate:   '2021-07-05',
+    applicationDate: '2021-07-05',
     website:  'https://jobs.smartrecruiters.com/Numberly/743999756879073-stage-alternance-front-end-engineer-vuejs-',
     img: 'assets/img/numberly.png'
   },
@@ -131,20 +131,55 @@ const displayCharacters = (anyArray) => {
       var application = new Date(arrayElement.applicationDate);
       var differenceInTime = today.getTime() - application.getTime();
       var differenceInDays = parseInt(differenceInTime / (1000 * 3600 * 24));
-      differenceInDays = (differenceInDays == 0 ? 'postulé aujourd\'hui' : 'postulé il y a ' + differenceInDays + ' jours');
+      differenceInDays = (
+        differenceInDays == 0 ? 'postulé aujourd\'hui' : differenceInDays == 1 ? 'postulé il y a ' + differenceInDays + ' jour' : 'postulé il y a ' + differenceInDays + ' jours'
+      );
 
     return `
-    <div class="card m-2" style="width: 18rem;">
+    <div id="item_${arrayElement.name}" class="card m-2" style="width: 18rem;">
      <img src="${arrayElement.img}" class="card-img-top" alt="logo de la sociéte ${arrayElement.name}">
       <div class="card-body">
         <h5 class="card-title mb-5">${arrayElement.post}</h5>
-        <p class="card-text">`+ differenceInDays + `</p>
-        <a href="${arrayElement.website}" target="_blank" class="btn btn-primary">Consulter</a>
+        <p class="card-text m-3">`+ differenceInDays + `</p>
+        <button class="btn btn-primary" onclick="displayPopup(
+          '${arrayElement.name}', '${arrayElement.post}', '${arrayElement.technologies}', '${arrayElement.website}')">Consulter</button>
       </div>
     </div>
     `;
   })
   .join('');
   document.getElementById("displayCards").innerHTML = htmlString;
+
+
 }
 displayCharacters(companiesList);
+
+function displayPopup(name, post, technos, web){
+  companiesList.forEach((item) => {
+    if(item.name == name){
+      let answer =
+      `
+      <div class="popup">
+        <div id="popup-heading">
+          <i class="far fa-2x fa-window-close m-2" onclick="closeIt()"></i>
+          <p class="m-2"><small>Savoir plus sur le post</small></p>
+        </div>
+        <div id="popup-title">
+          <h1>${name}</h1>
+          <h2>${post}</h2>
+        </div>
+        <div id="popup-body" class="d-flex flex-column justify-content-center">
+          <p class="p-3">${technos}</p>
+          <a href="${web}" target="_blank" class="btn btn-primary my-5">Consulter l'offre</a>
+        </div>
+      </div>
+      `;
+
+      document.getElementById('displayPopup').innerHTML += answer;
+    }
+  });
+}
+
+function closeIt(){
+  document.getElementById('displayPopup').innerHTML = "";
+}
