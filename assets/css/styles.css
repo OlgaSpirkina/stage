@@ -81,7 +81,7 @@ color: var(--mainorange);
   height: 6rem;
   border-radius: 1rem 1rem 0 0;
 }
-/* la div popup et ses différentes parties: heading, title, body et une icone pour fermer la div*/
+/* la div popup et ses différentes parties: heading, title, body, footeret une icone pour fermer la div*/
 .popup{
   z-index: 1;
   position: absolute;
@@ -105,17 +105,30 @@ color: var(--mainorange);
 }
 #popup-title h2{
   color: #efab00;
-  background: rgba(145, 163, 176, .7);
+  background-color: rgba(145, 163, 176, .7);
 }
 #popup-body{
-  height: 30vh;
+  height: 35vh;
   background-color: #fff;
-  text-align: justify;
+  border: 1px solid rgba(145, 163, 176, .7);
+  overflow: scroll;
 }
-#popup-body a {
-  width: 10vw;
+#popup-body ul{
+  height: 30vh;
   margin: 0 auto;
+}
+#popup-body ul li{
+  margin-top: .5rem;
+  padding-top: .5rem;
+}
+#popup-footer{
+  background-color: rgba(145, 163, 176, .7);
+}
+#popup-footer a {
   border-radius: .5rem;
+  color: #fff;
+  background-color: #efab00;
+  text-decoration: none;
 }
 /* une icone permettant de fermer la div popup */
 .fa-window-close{
@@ -134,11 +147,12 @@ footer{
   height: 5rem;
 }
 /* les icones de contacts */
-a{
+footer a{
   text-decoration: none;
    color: var(--mainorange);
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 468px) {
   label,
   input,
   .icon{
@@ -151,4 +165,21 @@ a{
     font-size: 1rem;
     border-radius: .5rem;
   }
+  #popup{
+    width: 100%;
+  }
+  #displayTechnos li{
+    padding: .1rem;
+    margin-top: 0;
+  }
 }
+@media only screen and (max-width: 550px) {
+  #popup{
+    width: 80%;
+  }
+}
+@media (min-width: 551px) and (max-width: 1200px) {
+  #popup{
+    width: 60%;
+  }
+ }

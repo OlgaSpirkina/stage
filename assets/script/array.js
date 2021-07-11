@@ -1,5 +1,6 @@
 let companiesList = [
   {
+    id: 1,
     name: 'Galadrim',
     post:'Développeur Full-Stack',
     technologies:['MySQL', 'Node.js', 'NestJS', 'JavaScript', 'TypeScript', 'React', 'React Native'],
@@ -8,6 +9,7 @@ let companiesList = [
     img: 'assets/img/galadrim.png'
   },
   {
+    id: 2,
     name: 'Scaleway',
     post: 'Front-End Developer, Console (JavaScript, React)',
     technologies:['REST API', 'JavaScript ES2018', 'CSS-in-JS',
@@ -22,6 +24,7 @@ let companiesList = [
     img: 'assets/img/scaleway.png'
   },
   {
+    id: 3,
     name: 'Groupe Micropole',
     post: 'Developpeur web/mobile ',
     technologies:['React', 'Node.js', 'Angular',
@@ -33,6 +36,7 @@ let companiesList = [
     img: 'assets/img/micropole.png'
   },
   {
+    id:4,
     name: 'SAP',
     post: "Développeur JavaScript Application Web pour Intelligent RPA",
     technologies: ['Cloud Studio', 'Robotic Process Automation (RPA)', 'testes unitaires JavaScript',
@@ -44,6 +48,7 @@ let companiesList = [
     img: 'assets/img/sap.png'
   },
   {
+    id: 5,
     name: 'Numberly',
     post: 'Front-end Engineer (VueJS)',
     technologies: ['Javascript', 'Vue.js 2', 'Vue.js 3(Typescript)',
@@ -56,6 +61,7 @@ let companiesList = [
     img: 'assets/img/numberly.png'
   },
   {
+    id: 6,
     name: 'Dataiku',
     post: 'File metadata extraction',
     technologies: ['generate datasets from folders of files', 'basic knowledge of Web development',
@@ -67,6 +73,7 @@ let companiesList = [
     img: 'assets/img/dataiku.png'
   },
   {
+    id: 7,
     name: 'Criteo',
     post: 'Backend or Fullstack',
     technologies: ['TypeScript/JavaScript', 'C# (.Net Frmwk, .Net Core)',
@@ -78,6 +85,7 @@ let companiesList = [
     img: 'assets/img/criteo.png'
   },
   {
+    id: 8,
     name: 'Axa',
     post: 'Développeur IT',
     technologies:   ['Frameworks Python', 'SQL',
@@ -89,6 +97,7 @@ let companiesList = [
     img: 'assets/img/axa.png'
   },
   {
+    id: 9,
     name: 'Sparted',
     post: 'Developer Fullstack Web/Mobile',
     technologies: ['PostgreSQL', 'React',
@@ -102,16 +111,24 @@ let companiesList = [
     img: 'assets/img/sparted.png'
   },
   {
+    id: 10,
     name: 'LumApps',
     post: 'Fullstack Engineer Integration',
-    technologies:['React/Redux', 'JavaScript', 'Expérience HTML / CSS / SASS',
-    'Tests', 'Python',
-    'Hébergement Google App Engine & Azure'
-    ],
+    technologies:['React Redux', 'JavaScript', 'Expérience HTML, CSS, SASS', 'Tests', 'Python',
+    'Hébergement Google App Engine Azure'],
     applicationDate: '2021-07-07',
     website: 'https://www.lumapps.com/company/job-offers/?gh_jid=5242816002',
     img: 'assets/img/lumapps.png'
   },
+  {
+    id: 11,
+    name: 'Coucou',
+    post: 'Fullstack',
+    technologies: 'JS',
+    applicationDate: '2021-07-11',
+    website: 'https://www.coucou.fr',
+    img: 'assets/img/galadrim.png'
+  }
 ];
 // la bar de recherche
 const input = document.getElementById("searchBar");
@@ -141,45 +158,50 @@ const displayCharacters = (anyArray) => {
       <div class="card-body">
         <h5 class="card-title mb-5">${arrayElement.post}</h5>
         <p class="card-text m-3">`+ differenceInDays + `</p>
-        <button class="btn btn-primary" onclick="displayPopup(
-          '${arrayElement.name}', '${arrayElement.post}', '${arrayElement.technologies}', '${arrayElement.website}')">Consulter</button>
+        <button class="btn btn-primary" onclick="displayPopup('${arrayElement.name}', '${arrayElement.post}', '${arrayElement.id}', '${arrayElement.website}')">Consulter</button>
       </div>
     </div>
     `;
   })
   .join('');
   document.getElementById("displayCards").innerHTML = htmlString;
-
-
 }
 displayCharacters(companiesList);
 
-function displayPopup(name, post, technos, web){
-  companiesList.forEach((item) => {
-    if(item.name == name){
-      let answer =
-      `
-      <div class="popup">
-        <div id="popup-heading">
-          <i class="far fa-2x fa-window-close m-2" onclick="closeIt()"></i>
-          <p class="m-2"><small>Savoir plus sur le post</small></p>
-        </div>
-        <div id="popup-title">
-          <h1>${name}</h1>
-          <h2>${post}</h2>
-        </div>
-        <div id="popup-body" class="d-flex flex-column justify-content-center">
-          <p class="p-3">${technos}</p>
-          <a href="${web}" target="_blank" class="btn btn-primary my-5">Consulter l'offre</a>
-        </div>
-      </div>
-      `;
 
-      document.getElementById('displayPopup').innerHTML += answer;
-    }
-  });
+function displayPopup(name, post, id, web){
+      companiesList.forEach((item) => {
+        if(item.name == name){
+          let answer =
+          `
+          <div id="popup" class="popup">
+            <div id="popup-heading">
+              <i class="far fa-2x fa-window-close m-2" onclick="closeIt()"></i>
+              <p class="m-2"><small>Savoir plus sur le post</small></p>
+            </div>
+            <div id="popup-title">
+              <h1>${name}</h1>
+              <h2>${post}</h2>
+            </div>
+            <div id="popup-body">
+              <ul id="displayTechnos">
+              </ul>
+            </div>
+            <div id="popup-footer">
+              <a href="${web}" target="_blank" class="btn m-2">Consulter l'offre</a>
+            </div>
+          </div>
+          `;
+          document.getElementById('displayPopup').innerHTML += answer;
+          displayList(`${id}`);
+        }
+      });
 }
-
 function closeIt(){
   document.getElementById('displayPopup').innerHTML = "";
+}
+let displayList = (ids) =>{
+  companiesList[ids].technologies.forEach((item) => {
+    document.getElementById('displayTechnos').innerHTML += `<li class="mx-auto">${item}</li>`;
+})
 }
