@@ -212,6 +212,7 @@ function closeIt(){
   document.getElementById('displayPopup').innerHTML = "";
 }
 
+// pour afficher la liste des technologies utilisées je parcours le tableau de la clé companiesList.technologies
 let displayList = (index) =>{
   companiesList.forEach((item) => {
     if(index == item.id){
