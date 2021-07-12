@@ -1,5 +1,5 @@
 # stage
-Le projet Recherche de stage Developpement Web. Projet réalisé en JavaScript. Une manipulation du tableau d'objets permettant d'afficher de multiplesgi éléments.
+Le projet Recherche de stage Developpement Web. Projet réalisé en JavaScript. Une manipulation du tableau d'objets permettant d'afficher de multiples éléments.
 
 ![grab-landing-page](https://github.com/OlgaSpirkina/stage/blob/main/assets/img/stage.gif)
 
