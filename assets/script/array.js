@@ -1,7 +1,7 @@
 // un tableau d'objets
 let companiesList = [
   {
-    id: 1,
+    id: 0,
     name: 'Galadrim',
     post:'Développeur Full-Stack',
     technologies:['MySQL', 'Node.js', 'NestJS', 'JavaScript', 'TypeScript', 'React', 'React Native'],
@@ -10,7 +10,7 @@ let companiesList = [
     img: 'assets/img/galadrim.png'
   },
   {
-    id: 2,
+    id: 1,
     name: 'Scaleway',
     post: 'Front-End Developer, Console (JavaScript, React)',
     technologies:['REST API', 'JavaScript ES2018', 'CSS-in-JS',
@@ -25,7 +25,7 @@ let companiesList = [
     img: 'assets/img/scaleway.png'
   },
   {
-    id: 3,
+    id: 2,
     name: 'Groupe Micropole',
     post: 'Developpeur web/mobile ',
     technologies:['React', 'Node.js', 'Angular',
@@ -37,7 +37,7 @@ let companiesList = [
     img: 'assets/img/micropole.png'
   },
   {
-    id:4,
+    id:3,
     name: 'SAP',
     post: "Développeur JavaScript Application Web pour Intelligent RPA",
     technologies: ['Cloud Studio', 'Robotic Process Automation (RPA)', 'testes unitaires JavaScript',
@@ -49,7 +49,7 @@ let companiesList = [
     img: 'assets/img/sap.png'
   },
   {
-    id: 5,
+    id: 4,
     name: 'Numberly',
     post: 'Front-end Engineer (VueJS)',
     technologies: ['Javascript', 'Vue.js 2', 'Vue.js 3(Typescript)',
@@ -62,7 +62,7 @@ let companiesList = [
     img: 'assets/img/numberly.png'
   },
   {
-    id: 6,
+    id: 5,
     name: 'Dataiku',
     post: 'File metadata extraction',
     technologies: ['generate datasets from folders of files', 'basic knowledge of Web development',
@@ -74,7 +74,7 @@ let companiesList = [
     img: 'assets/img/dataiku.png'
   },
   {
-    id: 7,
+    id: 6,
     name: 'Criteo',
     post: 'Backend or Fullstack',
     technologies: ['TypeScript/JavaScript', 'C# (.Net Frmwk, .Net Core)',
@@ -86,7 +86,7 @@ let companiesList = [
     img: 'assets/img/criteo.png'
   },
   {
-    id: 8,
+    id: 7,
     name: 'Axa',
     post: 'Développeur IT',
     technologies:   ['Frameworks Python', 'SQL',
@@ -98,7 +98,7 @@ let companiesList = [
     img: 'assets/img/axa.png'
   },
   {
-    id: 9,
+    id: 8,
     name: 'Sparted',
     post: 'Developer Fullstack Web/Mobile',
     technologies: ['PostgreSQL', 'React',
@@ -112,7 +112,7 @@ let companiesList = [
     img: 'assets/img/sparted.png'
   },
   {
-    id: 10,
+    id: 9,
     name: 'LumApps',
     post: 'Fullstack Engineer Integration',
     technologies:['React Redux', 'JavaScript', 'Expérience HTML, CSS, SASS', 'Tests', 'Python',
@@ -122,10 +122,10 @@ let companiesList = [
     img: 'assets/img/lumapps.png'
   },
   {
-    id: 11,
+    id: 10,
     name: 'Coucou',
     post: 'Fullstack',
-    technologies: 'JS',
+    technologies: ['JS'],
     applicationDate: '2021-07-11',
     website: 'https://www.coucou.fr',
     img: 'assets/img/galadrim.png'
@@ -211,8 +211,14 @@ function displayPopup(name, post, id, web){
 function closeIt(){
   document.getElementById('displayPopup').innerHTML = "";
 }
-let displayList = (ids) =>{
-  companiesList[ids].technologies.forEach((item) => {
-    document.getElementById('displayTechnos').innerHTML += `<li class="mx-auto">${item}</li>`;
-})
+
+let displayList = (index) =>{
+  companiesList.forEach((item) => {
+    if(index == item.id){
+      console.log(item.technologies);
+      item.technologies.forEach((elems) => {
+          document.getElementById('displayTechnos').innerHTML += `<li class="mx-auto">${elems}</li>`;
+      });
+    }
+  });
 }
