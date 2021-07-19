@@ -138,6 +138,25 @@ let companiesList = [
     applicationDate: '2021-07-15',
     website: 'https://recrutement.domissori.fr/ad/administrateur-reseau-informatique-ile-de-france/',
     img: 'assets/img/domissori.png'
+  },
+  {
+    id: 12,
+    name: 'Withings',
+    post: 'API Fullstack Developer PHP / React',
+    technologies: ['Methode Agile', 'JavaScript', 'React', 'Git', 'HTML/SASS', 'Linux'],
+    applicationDate: '2021-07-19',
+    website: 'https://www.welcometothejungle.com/en/companies/withings/jobs/stage-api-fullstack-developer-php-react-h-f_issy-les-moulineaux?sp_ref=45abb1ca-0952-4f78-8f77-17b267fb2d14&sp_src=job_alert_email&utm_medium=email&utm_source=job_alerts',
+    img: 'assets/img/withings.png'
+  },
+  {
+    id: 13,
+    name: 'Iroko',
+    post: 'Full-stack Developer',
+    technologies: ['Methode Agile', 'Vue.js (Framework Nuxt) ', 'Node.js (Framework Nest.js)',
+    'CI/CD : GitLab CI + AWS CloudFormation + NX', 'PostgreSQL', 'Hébergement : AWS Serverless'],
+    applicationDate: '2021-07-19',
+    website: 'https://www.welcometothejungle.com/en/companies/iroko/jobs/full-stack-developer-stage_paris',
+    img: 'assets/img/iroko.png'
   }
 ];
 // la bar de recherche
