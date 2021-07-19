@@ -152,11 +152,21 @@ let companiesList = [
     id: 13,
     name: 'Iroko',
     post: 'Full-stack Developer',
-    technologies: ['Methode Agile', 'Vue.js (Framework Nuxt) ', 'Node.js (Framework Nest.js)',
+    technologies: ['Methode Agile', 'Vue.js (Framework Nuxt)', 'Node.js (Framework Nest.js)',
     'CI/CD : GitLab CI + AWS CloudFormation + NX', 'PostgreSQL', 'Hébergement : AWS Serverless'],
     applicationDate: '2021-07-19',
     website: 'https://www.welcometothejungle.com/en/companies/iroko/jobs/full-stack-developer-stage_paris',
     img: 'assets/img/iroko.png'
+  },
+  {
+    id: 14,
+    name: 'Topitech',
+    post: 'Stagiaire Développeur web',
+    technologies: ['HTML / CSS', 'Framework CSS', 'Next.js, ReactJS, Vue',
+    'Apache', 'Shell', 'Linux'],
+    applicationDate: '2021-07-19',
+    website: 'https://www.linkedin.com/jobs/view/2576495755/?refId=%3D%C3%B9%C3%80%C3%89%01%C3%9Dd%5B%C3%AE%C3%B87%19%25j%25T&trackingId=va5jGv6ATzRM8WbPdGHgPA%3D%3D',
+    img: 'assets/img/topitech.png'
   }
 ];
 // la bar de recherche
