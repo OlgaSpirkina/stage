@@ -123,12 +123,21 @@ let companiesList = [
   },
   {
     id: 10,
-    name: 'Coucou',
-    post: 'Fullstack',
-    technologies: ['JS'],
-    applicationDate: '2021-07-11',
-    website: 'https://www.coucou.fr',
-    img: 'assets/img/galadrim.png'
+    name: 'Goalmap',
+    post: 'Développeuse web',
+    technologies: ['Non précisées'],
+    applicationDate: '2021-07-08',
+    website: 'https://goalmap.com/fr',
+    img: 'assets/img/goalmap.png'
+  },
+  {
+    id: 11,
+    name: 'Domissori',
+    post: 'Développement Web',
+    technologies: ['Non précisées'],
+    applicationDate: '2021-07-15',
+    website: 'https://recrutement.domissori.fr/ad/administrateur-reseau-informatique-ile-de-france/',
+    img: 'assets/img/domissori.png'
   }
 ];
 // la bar de recherche
