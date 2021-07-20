@@ -161,12 +161,49 @@ let companiesList = [
   {
     id: 14,
     name: 'Topitech',
-    post: 'Stagiaire Développeur web',
+    post: 'Développeur web',
     technologies: ['HTML / CSS', 'Framework CSS', 'Next.js, ReactJS, Vue',
     'Apache', 'Shell', 'Linux'],
     applicationDate: '2021-07-19',
     website: 'https://www.linkedin.com/jobs/view/2576495755/?refId=%3D%C3%B9%C3%80%C3%89%01%C3%9Dd%5B%C3%AE%C3%B87%19%25j%25T&trackingId=va5jGv6ATzRM8WbPdGHgPA%3D%3D',
     img: 'assets/img/topitech.png'
+  },
+  {
+    id: 15,
+    name: 'Suez',
+    post: 'Développeur web',
+    technologies: ['HTML / CSS', 'NodeJS, ExpressJS', 'Angular 7++',
+    'MongoDB'],
+    applicationDate: '2021-07-20',
+    website: 'https://hris-suez.csod.com/ux/ats/careersite/10/home/requisition/27357?c=hris-suez',
+    img: 'assets/img/suez.png'
+  },
+  {
+    id: 16,
+    name: 'Neovee',
+    post: 'Développeur Full-stack',
+    technologies: ['PHP', 'ANGULAR', 'HTML (CSS)', 'JAVASCRIPT', 'Symfony', 'Wordpress', 'Git'],
+    applicationDate: '2021-07-20',
+    website: 'https://www.glassdoor.fr/job-listing/d%C3%A9veloppeur-full-stack-hf-stage-ou-contrat-d-apprentissage-neovee-energie-JV_IC2881970_KO0,58_KE59,73.htm?jl=4116151824&pos=104&ao=1136006&s=58&guid=0000017ac3ecc41eb35783a7b4a44b2b&src=GD_JOB_AD&t=SR&vt=w&uido=F27B4AD139D93FD8D71226FB9A14C149&ea=1&cs=1_bb22a6df&cb=1626784711839&jobListingId=4116151824&ctt=1626784736481',
+    img: 'assets/img/neovee.png'
+  },
+  {
+    id: 17,
+    name: 'Fygr',
+    post: 'Développeur Full-Stack',
+    technologies: ['Python (Flask Framework)', 'Javascript (Vue.js Framework)', ' SQL (PostgreSQL)', 'CI/CD: Jenkins', 'AWS (ECS, EC2, Lambda, Cloud Formation)'],
+    applicationDate: '2021-07-20',
+    website: 'https://jobs.stationf.co/companies/fygr-sas/jobs/stage-developpeur-full-stack_paris_FS_GAPd7pJ',
+    img: 'assets/img/fygr.png'
+  },
+  {
+    id: 18,
+    name: 'Qantev',
+    post: 'Frontend Developer ',
+    technologies: ['HTML', 'CSS', 'JavaScript (ES6)', 'React JS'],
+    applicationDate: '2021-07-20',
+    website: 'https://jobs.stationf.co/companies/qantev/jobs/frontend-developer-intern_paris',
+    img: 'assets/img/quantev.png'
   }
 ];
 // la bar de recherche
