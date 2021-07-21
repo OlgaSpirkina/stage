@@ -204,6 +204,35 @@ let companiesList = [
     applicationDate: '2021-07-20',
     website: 'https://jobs.stationf.co/companies/qantev/jobs/frontend-developer-intern_paris',
     img: 'assets/img/quantev.png'
+  },
+  {
+    id: 19,
+    name: 'Graneet',
+    post: 'Frontend Developer',
+    technologies: ['Node.js', 'principe LEAN', 'CSS', 'React JS(NestJS / TypeORM)', 'Rollup + Webpack', 'PostgreSQL'],
+    applicationDate: '2021-07-21',
+    website: 'https://jobs.stationf.co/companies/graneet/jobs/developpeur-se-full-stack-js-stage_paris',
+    img: 'assets/img/graneet.png'
+  },
+  {
+    id: 20,
+    name: 'SAP',
+    post: 'Développeur(euse) Web',
+    technologies: ['Python & Django', 'JavaScript / TypeScript (Angular / Backbone)',
+'bases de données MySQL', 'Docker & Kubernetes'],
+    applicationDate: '2021-07-21',
+    website: 'https://jobs.sap.com/job/Paris-Stagiaire-D%C3%A9veloppeur%28euse%29-FH-75009/676334201/',
+    img: 'assets/img/sap.png'
+  },
+  {
+    id: 21,
+    name: 'Voysen',
+    post: 'Fullstack Developer / Web',
+    technologies: [' JavaScript', 'Vue.js', 'Python', 'Django', 'PostgreSQL',
+'Devops: AWS, Heroku'],
+    applicationDate: '2021-07-21',
+    website: 'https://jobs.stationf.co/companies/voysen/jobs/stage-6-mois-developpeur-fullstack-django-python_paris',
+    img: 'assets/img/voysen.png'
   }
 ];
 // la bar de recherche
