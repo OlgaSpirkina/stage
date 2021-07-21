@@ -218,10 +218,10 @@ let companiesList = [
     id: 20,
     name: 'SAP',
     post: 'Développeur(euse) Web',
-    technologies: ['Python & Django', 'JavaScript / TypeScript (Angular / Backbone)',
+    technologies: ['Python & Django', 'JavaScript TypeScript (Angular  Backbone)',
 'bases de données MySQL', 'Docker & Kubernetes'],
     applicationDate: '2021-07-21',
-    website: 'https://jobs.sap.com/job/Paris-Stagiaire-D%C3%A9veloppeur%28euse%29-FH-75009/676334201/',
+    website: "https://jobs.sap.com/job/Paris-Stagiaire-D%C3%A9veloppeur%28euse%29-FH-75009/676334201/",
     img: 'assets/img/sap.png'
   },
   {
@@ -296,7 +296,7 @@ function displayPopup(name, post, id, web){
               <h2>${post}</h2>
             </div>
             <div id="popup-body">
-              <ul id="displayTechnos">
+              <ul id=${name}_${id}>
               </ul>
             </div>
             <div id="popup-footer">
@@ -317,13 +317,15 @@ function closeIt(){
 }
 
 // pour afficher la liste des technologies utilisées je parcours le tableau de la clé companiesList.technologies
+// window.addEventListener('load', function () {
 let displayList = (index) =>{
   companiesList.forEach((item) => {
     if(index == item.id){
-      console.log(item.technologies);
+      console.log(companiesList.length);
       item.technologies.forEach((elems) => {
-          document.getElementById('displayTechnos').innerHTML += `<li class="mx-auto">${elems}</li>`;
+        document.getElementById(`${item.name}_${item.id}`).innerHTML += `<li class="mx-auto">${elems}</li>`;
       });
     }
   });
 }
+// })
