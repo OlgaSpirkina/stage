@@ -233,6 +233,51 @@ let companiesList = [
     applicationDate: '2021-07-21',
     website: 'https://jobs.stationf.co/companies/voysen/jobs/stage-6-mois-developpeur-fullstack-django-python_paris',
     img: 'assets/img/voysen.png'
+  },
+  {
+    id: 22,
+    name: 'Sikiwis Digitalizr',
+    post: 'développeur web',
+    technologies: ['asp.net', 'maria db', 'mysql', 'javascript', 'css'],
+    applicationDate: '2021-07-29',
+    website: 'https://www.aidostage.com/stage/offre-developpeur-web-93648.html',
+    img: 'assets/img/digitalizr.png'
+  },
+  {
+    id: 23,
+    name: 'Digitalyze',
+    post: 'developpeur.se web FullStack teletravail',
+    technologies: ['Node.Js', 'React', 'Familier des notions d\'API', 'Architecture Cloud de type AWS'],
+    applicationDate: '2021-07-29',
+    website: 'https://studl.com/user/offer/detail/stage-developpeur-se-web-fullstack-teletravail-98189',
+    img: 'assets/img/digitalyze.png'
+  },
+  {
+    id: 24,
+    name: 'Tediber',
+    post: 'développeur(se) frontend',
+    technologies: ['HTML', 'CSS/SASS', 'PHP', 'javascript'],
+    applicationDate: '2021-07-29',
+    website: 'https://www.welcometothejungle.com/en/companies/tediber/jobs/stage-developpeur-se-frontend-pre-embauche_paris_TEDIB_kR6ax5g',
+    img: 'assets/img/tediber.png'
+  },
+  {
+    id: 25,
+    name: 'Shayp',
+    post: 'frontend developer eng',
+    technologies: ['Javascript(Typescript)', 'ReactJS', 'REST API'],
+    applicationDate: '2021-07-29',
+    website: 'https://www.welcometothejungle.com/en/companies/shayp/jobs/frontend-engineer_etterbeek#apply',
+    img: 'assets/img/shayp.png'
+  },
+  {
+    id: 26,
+    name: 'Buster.Ai',
+    post: 'frontend developer eng',
+    technologies: ['JavaScript (ES6)', 'Typescript', 'HTML5/CSS3', 'UI/UX', ],
+    applicationDate: '2021-07-29',
+    website: 'https://www.welcometothejungle.com/fr/companies/buster-ai/jobs/front-end-developer-intern_paris',
+    img: 'assets/img/buster.png'
   }
 ];
 // la bar de recherche
@@ -277,7 +322,20 @@ const displayCharacters = (anyArray) => {
   document.getElementById("displayCards").innerHTML = htmlString;
 }
 // j'appelle la fonction qui va trier / searchBar
-displayCharacters(companiesList);
+(function (){
+  let resentTwelve = companiesList.slice(-12);
+  let allReverseOrder = companiesList.sort((f, s) => s - f);
+  resentTwelve = resentTwelve.sort((f, s) => s - f);
+  displayCharacters(resentTwelve)
+  seeMore = document.getElementById('see-more');
+  seeMore.addEventListener('click', function(){
+    seeMore.innerHTML = (seeMore.innerHTML == 'Voir plus...') ? 'Voir moins' : 'Voir plus...';
+    displayCharacters(allReverseOrder) ? displayCharacters(resentTwelve) : displayCharacters(allReverseOrder);
+    // seeMore.innerHTML = (
+    //   (seeMore.innerHTML == 'Voir plus...') ? displayCharacters(resentTwelve) ? (seeMore.innerHTML == 'Voir moins') : displayCharacters(allReverseOrder)
+    // );
+  })
+})()
 
 // afficher l'onglet avec plus de détaille consernant chaque offre. L'onglet est composé des divs stylisées
 // elle est appeller au moment de génération des cartes (à la ligne 167)
