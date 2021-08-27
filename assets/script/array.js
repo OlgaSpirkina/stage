@@ -26,23 +26,20 @@ let companiesList = [
   },
   {
     id: 2,
-    name: 'Groupe Micropole',
+    name: 'Groupe-Micropole',
     post: 'Developpeur web/mobile ',
-    technologies:['React', 'Node.js', 'Angular',
-    'HTML / CSS', 'Google Dialogflow',
-    'Amazon Lex', 'IBM Watson'
-    ],
+    technologies:['React', 'Node.js', 'Angular', 'HTML / CSS', 'Google Dialogflow', 'Amazon Lex', 'IBM Watson'],
     applicationDate: '2021-06-30',
     website: 'https://www.micropole.com/fr-fr/offres-d-emploi/mic-stginnov-01-developpeur-web-mobile-h-f-en-stage',
     img: 'assets/img/micropole.png'
   },
   {
     id:3,
-    name: 'SAP',
+    name: 'Sap',
     post: "Développeur JavaScript Application Web pour Intelligent RPA",
-    technologies: ['Cloud Studio', 'Robotic Process Automation (RPA)', 'testes unitaires JavaScript',
-    'GIT/GITHUB', 'gestion du DOM',
-    'Design Patterns type FLUX, REACT'
+    technologies: ['Cloud Studio', 'Robotic Process Automation (RPA)', 'tests unitaires JavaScript',
+    'GIT GITHUB', 'gestion du DOM',
+    'Design Patterns type FLUX', 'REACT'
     ],
     applicationDate: '2021-07-05',
     website:  'https://jobs.sap.com/',
@@ -219,7 +216,7 @@ let companiesList = [
     name: 'SAP',
     post: 'Développeur(euse) Web',
     technologies: ['Python & Django', 'JavaScript TypeScript (Angular  Backbone)',
-'bases de données MySQL', 'Docker & Kubernetes'],
+'bases de données MySQL', 'Docker, Kubernetes'],
     applicationDate: '2021-07-21',
     website: "https://jobs.sap.com/job/Paris-Stagiaire-D%C3%A9veloppeur%28euse%29-FH-75009/676334201/",
     img: 'assets/img/sap.png'
@@ -282,17 +279,19 @@ let companiesList = [
 ];
 // la bar de recherche
 const input = document.getElementById("searchBar");
-input.addEventListener('keyup', (e) => {
-  const searchString = e.target.value.toLowerCase();
-  const filteredCompanies = companiesList.filter(eachCompany => {
-    return (
-      eachCompany.name.toLowerCase().includes(searchString) || eachCompany.post.toLowerCase().includes(searchString)
-    );
+(function (){
+  input.addEventListener('keyup', (e) => {
+    let searchString = e.target.value.toLowerCase();
+    const filteredCompanies = companiesList.filter(eachCompany => {
+      return (
+        eachCompany.name.toLowerCase().includes(searchString) || eachCompany.post.toLowerCase().includes(searchString)
+      );
+    });
+    // j'appelle la fonction qui génére les cartes avec la fonction qui filtre comme argument
+    displayCharacters(filteredCompanies);
   });
-  // j'appelle la fonction qui génére les cartes avec la fonction qui filtre comme argument
-  displayCharacters(filteredCompanies);
+})()
 
-});
 // la fonction qui parcours un tableau et permet d'afficher les elements du tableau dans le html en forme d'une carte bootstrap
 const displayCharacters = (anyArray) => {
   const today = new Date();
@@ -330,43 +329,42 @@ const displayCharacters = (anyArray) => {
   seeMore = document.getElementById('see-more');
   seeMore.addEventListener('click', function(){
     seeMore.innerHTML = (seeMore.innerHTML == 'Voir plus...') ? 'Voir moins' : 'Voir plus...';
-    displayCharacters(allReverseOrder) ? displayCharacters(resentTwelve) : displayCharacters(allReverseOrder);
-    // seeMore.innerHTML = (
-    //   (seeMore.innerHTML == 'Voir plus...') ? displayCharacters(resentTwelve) ? (seeMore.innerHTML == 'Voir moins') : displayCharacters(allReverseOrder)
-    // );
+    // afficher toutes les cartes en cliquant sur le bouton 'Voir plus...' sinon 12 les plus récentes
+    (seeMore.innerHTML == 'Voir plus...') ? displayCharacters(resentTwelve) : displayCharacters(allReverseOrder);
   })
 })()
 
 // afficher l'onglet avec plus de détaille consernant chaque offre. L'onglet est composé des divs stylisées
 // elle est appeller au moment de génération des cartes (à la ligne 167)
 function displayPopup(name, post, id, web){
-      companiesList.forEach((item) => {
-        if(item.name == name){
-          let answer =
-          `
-          <div id="popup" class="popup">
-            <div id="popup-heading">
-              <i class="far fa-2x fa-window-close m-2" onclick="closeIt()"></i>
-              <p class="m-2"><small>Savoir plus sur le post</small></p>
-            </div>
-            <div id="popup-title">
-              <h1>${name}</h1>
-              <h2>${post}</h2>
-            </div>
-            <div id="popup-body">
-              <ul id=${name}_${id}>
-              </ul>
-            </div>
-            <div id="popup-footer">
-              <a href="${web}" target="_blank" class="btn m-2">Consulter l'offre</a>
-            </div>
-          </div>
-          `;
-          document.getElementById('displayPopup').innerHTML += answer;
-          // j'appelle la fonction qui affiche toutes les technologies utilisées en tant que la list non-ordonnée
-          displayList(`${id}`);
-        }
-      });
+  input.value = '';
+  companiesList.forEach((item) => {
+    if(item.name === name){
+      let answer =
+      `
+      <div id="popup" class="popup">
+        <div id="popup-heading">
+          <i class="far fa-2x fa-window-close m-2" onclick="closeIt()"></i>
+          <p class="m-2"><small>Savoir plus sur le post</small></p>
+        </div>
+        <div id="popup-title">
+          <h1>${name}</h1>
+          <h2>${post}</h2>
+        </div>
+        <div id="popup-body">
+          <ul id="${name}_${id}">
+          </ul>
+        </div>
+        <div id="popup-footer">
+          <a href="${web}" target="_blank" class="btn m-2">Consulter l'offre</a>
+        </div>
+      </div>
+      `;
+      document.getElementById('displayPopup').innerHTML += answer;
+      // j'appelle la fonction qui affiche toutes les technologies utilisées en tant que la list non-ordonnée
+      displayList(`${id}`);
+    }
+  });
 }
 
 // fermer l'onglet explicatif est appeller à la ligne 186
@@ -378,9 +376,9 @@ function closeIt(){
 // window.addEventListener('load', function () {
 let displayList = (index) =>{
   companiesList.forEach((item) => {
-    if(index == item.id){
-      console.log(companiesList.length);
+    if(Number(index) === item.id){
       item.technologies.forEach((elems) => {
+        console.log(elems);
         document.getElementById(`${item.name}_${item.id}`).innerHTML += `<li class="mx-auto">${elems}</li>`;
       });
     }
