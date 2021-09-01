@@ -275,6 +275,55 @@ let companiesList = [
     applicationDate: '2021-07-29',
     website: 'https://www.welcometothejungle.com/fr/companies/buster-ai/jobs/front-end-developer-intern_paris',
     img: 'assets/img/buster.png'
+  },
+  {
+    id: 27,
+    name: 'Cibiltech',
+    post:'Web développeur·se Fullstack',
+    technologies:['PHP orienté objet',
+    'Framework MVC (Laravel)',
+    'MySQL',
+    'HTML5/CSS3', 'JavaScript',
+    'Git'],
+    applicationDate: '2021-09-01',
+    website: 'https://www.welcometothejungle.com/en/companies/cibiltech/jobs/web-developpeur-se-fullstack-stage_paris_CIBIL_qxJR3R1',
+    img: 'assets/img/cibiltech.png'
+  },
+  {
+    id: 28,
+    name: 'Blockpulse',
+    post:'Développeur web Fullstack',
+    technologies:['Javascript (Vue + NodeJs)'],
+    applicationDate: '2021-09-01',
+    website: 'https://www.welcometothejungle.com/en/companies/blockpulse/jobs/developpeur-web-full-stack-stage-fin-d-etude_paris',
+    img: 'assets/img/blockpulse.png'
+  },
+  {
+    id: 29,
+    name: 'AlumnForce',
+    post:'Développeur Web PHP JS',
+    technologies:['PHP', 'Javascript', 'la programmation objet'],
+    applicationDate: '2021-09-01',
+    website: 'https://www.welcometothejungle.com/en/companies/alumnforce/jobs/stage-developpeur-backend_bordeaux',
+    img: 'assets/img/alumnforce.png'
+  },
+  {
+    id: 30,
+    name: 'Bevouac',
+    post:'Développeur Front End',
+    technologies:['TDD', 'Javascript', 'FEO', 'Front-End frameworks: Vue, React, Angular', 'TypeScript', 'API REST', 'Bootstrap', 'Materialize'],
+    applicationDate: '2021-09-01',
+    website: 'https://www.welcometothejungle.com/en/companies/bevouac/jobs/developpeur-front-end-stage_paris',
+    img: 'assets/img/bevouac.png'
+  },
+  {
+    id: 31,
+    name: 'société Générale',
+    post:'Développeur Web',
+    technologies:['Stack tech: ', 'React', 'RxJS (ReactiveX)', 'TypeScript', 'C#', 'ElasticSearch', 'SQLServer', 'Azure', 'architecture SOA'],
+    applicationDate: '2021-09-01',
+    website: 'https://www.welcometothejungle.com/en/companies/societe-generale/jobs/developpeur-web_fontenay-sous-bois_SG_QXWDwll',
+    img: 'assets/img/societe.png'
   }
 ];
 // la bar de recherche
@@ -348,7 +397,7 @@ function displayPopup(name, post, id, web){
           <p class="m-2"><small>Savoir plus sur le post</small></p>
         </div>
         <div id="popup-title">
-          <h1>${name}</h1>
+          <h1>${name.toUpperCase()}</h1>
           <h2>${post}</h2>
         </div>
         <div id="popup-body">
