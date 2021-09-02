@@ -154,7 +154,9 @@ footer{
      color: var(--mainorange);
   }
 }
-
+#see-more{
+  width: inherit;
+}
 @media (min-width: 250px) and (max-width: 550px) {
   label,
   input,
