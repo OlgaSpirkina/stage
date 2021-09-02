@@ -372,6 +372,7 @@ const displayCharacters = (anyArray) => {
 // j'appelle la fonction qui va trier / searchBar
 (function (){
   let resentTwelve = companiesList.slice(-12);
+  console.log(resentTwelve)
   let allReverseOrder = companiesList.sort((f, s) => s - f);
   resentTwelve = resentTwelve.sort((f, s) => s - f);
   displayCharacters(resentTwelve)
