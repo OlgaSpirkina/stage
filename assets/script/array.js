@@ -324,6 +324,33 @@ let companiesList = [
     applicationDate: '2021-09-01',
     website: 'https://www.welcometothejungle.com/en/companies/societe-generale/jobs/developpeur-web_fontenay-sous-bois_SG_QXWDwll',
     img: 'assets/img/societe.png'
+  },
+  {
+    id: 32,
+    name: 'Reezocar',
+    post:'Développeur Web',
+    technologies:['domaine de la Growth', 'JavaScript', 'HTML/Css', 'bases en SQL et en utilisation d’API'],
+    applicationDate: '2021-09-06',
+    website: 'https://careers.flatchr.io/vacancy/wy3eop2ykr91kmq8-stage-developpeur-web-h-f?partner=1&utm_campaign=jobijoba&utm_medium=classic&utm_source=feed',
+    img: 'assets/img/reezocar.png'
+  },
+  {
+    id: 33,
+    name: 'Lucky Cart',
+    post:'FULL STACK JAVASCRIPT',
+    technologies:['Google Cloud Platform', 'JavaScript', 'HTML/Css', 'Docker', 'Node.js', 'bd NoSql'],
+    applicationDate: '2021-09-06',
+    website: 'https://www.welcometothejungle.com/en/companies/lucky-cart/jobs/full-stack-javascript-stage_paris',
+    img: 'assets/img/lucky.png'
+  },
+  {
+    id: 34,
+    name: 'Logora',
+    post:'Développeur React',
+    technologies:['Stack: ', 'Frontend : ReactJs/Redux', 'Backend : Ruby on Rails', ' DB : PostgreSQL, Redis', 'DevOps : AWS, Travis'],
+    applicationDate: '2021-09-06',
+    website: 'https://fr.indeed.com/emplois?q=Stage%20D%C3%A9veloppeur%20Web&l=Paris%20(75)&ts=1627562864767&rq=1&rsIdx=1&fromage=last&newcount=810&vjk=f55f948b0b0b256d',
+    img: 'assets/img/logora.png'
   }
 ];
 // la bar de recherche
